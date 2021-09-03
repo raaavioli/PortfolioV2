@@ -1,0 +1,17 @@
+
+$project-width: 400px;
+$project-height: calc(#{$project-width} * (9 / 16));
+
+
+
+.video-responsive {
+	width: $project-width;
+	height: $project-height;
+	position: relative;
+
+	iframe {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+	}
+}
