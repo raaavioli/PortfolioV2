@@ -8,7 +8,8 @@ import HideAndSeekPNG from "../images/HideAndSeek.png"
 import WaterRenderingPNG from "../images/panorama.png"
 import Project from "./project.js";
 
-import Portrait from "../images/mona.jpg";
+import HeadImage from "../images/hanging.jpg";
+import Portrait from "../images/portrait.jpg";
 
 const projects = [
   {
@@ -28,7 +29,7 @@ const projects = [
     text: "Flying Flame",
 	image: FlyingFlamePNG,
 	description: "A 2D survival helicopter game where your mission is to drop bombs on enemy blobs before they create too many dangerous turrets and shoot you down with homing missiles.",
-    keywords: "Java, 2D Animation system, Hand-drawn sprite-animations",
+    keywords: "Java, 2D sprite animations, Gimp",
   }
 ]
 
@@ -68,31 +69,38 @@ const IndexPage = () => {
 			<div className="head-panel dark flex-row">
 				<div className="head-text flex-column dark">
 					<h1>Hi, I'm Oliver!</h1>
-					<p className="dark">Computer scientist, rendering enthusiast and incurable adventure seeker.</p>
+					<p className="dark">Computer scientist, rendering enthusiast and
+					 adventure seeker.</p>
 				</div>
-				<img className="head-image" src={Portrait} alt="Me" />
+				<span class="cover">
+					<img className="head-image" src={HeadImage} alt="Me"/>
+				</span>
 			</div>
 		</div>
 
 		<div className="content-panel flex-column">
 			<div className="panel-separator"></div>
 			<h2>About</h2>
-			<p> 
-				I am Oliver Eriksson and I live in Stockholm, Sweden. I study computer science at <a href="https://www.kth.se/">KTH</a> (Royal Institute of Technology),
-				and I did my BSc from 2017-2020.I am currently doing the last year of my MSc with focus on computer graphics, which will be done in June 2022. 
-				I have spent most of my credits in courses related to computer graphics, followed by parallelization and High Performance Computing (HPC).
-			</p>
-			<p>
-				My interest in computer graphics has been with me since I was young. I have always had an been weak for captivating graphical effects whether it be 
-				particles, post processing effects or physically accurate simulations. As a kid I played quite a lot of video games, mainly on console, and I have
-				always been a great fan of platformers such as Jak and Daxter, Rachet and Clank, Uncharted, Halo and Sly Cooper.				
-			</p>
+			<div className="flex-row">
+				<div className="flex-column">
+					<p> 
+						I am Oliver Eriksson and I live in Stockholm, Sweden. I study computer science at <a href="https://www.kth.se/">KTH</a> (Royal Institute of Technology),
+						and I did my BSc at KTH from 2017-2020. I am currently doing the last year of my MSc with focus on computer graphics, which will be done in June 2022. 
+						I have spent most of my credits in courses related to computer graphics, followed by parallelization and High Performance Computing (HPC).
+					</p>
+					<p>
+						My interest in computer graphics has been with me since I was young. I have always had an been weak for captivating graphical effects whether it be 
+						particles, post processing effects or physically accurate simulations. As a kid I played quite a lot of video games, mainly on console, and I have
+						always been a great fan of platformers such as Jak and Daxter, Rachet and Clank, Uncharted, Halo and Sly Cooper.				
+					</p>
 
-			<p>
-				The goal of my career is to contribute to development and research in computer graphics. I want to ensure that the film and games industries 
-				continue to grow, and do so by giving artists the best tools they can have to create mesmerizing art.
-			</p>
-			<img className="floating-img" alt="Me"/>
+					<p>
+						The goal of my career is to contribute to development and research in computer graphics. I want to ensure that the film and games industries 
+						continue to grow, and do so by giving artists the best tools they can have to create mesmerizing art.
+					</p>
+				</div>
+				<img className="floating-img" src={Portrait} alt="Me"/>
+			</div>
 			<div className="panel-separator"></div>
 		</div>
 
