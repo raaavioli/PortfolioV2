@@ -83,6 +83,7 @@ const IndexPage = () => {
 			<h2>About</h2>
 			<div className="flex-row">
 				<div className="flex-column">
+					<img className="floating-img" src={Portrait} alt="Me"/>
 					<p> 
 						I am Oliver Eriksson and I live in Stockholm, Sweden. I study computer science at <a href="https://www.kth.se/">KTH</a> (Royal Institute of Technology),
 						and I did my BSc at KTH from 2017-2020. I am currently doing the last year of my MSc with focus on computer graphics, which will be done in June 2022. 
@@ -99,7 +100,6 @@ const IndexPage = () => {
 						continue to grow, and do so by giving artists the best tools they can have to create mesmerizing art.
 					</p>
 				</div>
-				<img className="floating-img" src={Portrait} alt="Me"/>
 			</div>
 			<div className="panel-separator"></div>
 		</div>
@@ -115,7 +115,7 @@ const IndexPage = () => {
 			<div className="panel-separator"></div>
 		</div>
 		<div className="content-panel flex-column">
-			<div className="flex-row">
+			<div className="flex-row qualifications">
 				<div className="qualification-box flex-column">	
 					<h2>Experience</h2>
 					<ul>
