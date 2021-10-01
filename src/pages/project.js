@@ -37,10 +37,10 @@ class Project extends React.Component {
 		
 	render () {
 		return <div className="outer-project-box flex-column">
-            <h3>{this.props.project.text}</h3>
+            <h3>{this.props.text}</h3>
 			<div className="flex-row">
 				<div className="tabs right light flex-row">
-					{this.props.project.embedId && 
+					{this.props.embedId && 
 					<button className={`${this.getSelected(2)}`} 
 						onClick={() => this.setState({index: 2})} 
 						onKeyDown={() => this.setState({index: 2})}>
@@ -61,17 +61,17 @@ class Project extends React.Component {
 			</div>
 				
 			<div className="inner-project-box">
-				{this.props.project.embedId && 
+				{this.props.embedId && 
 				<div className={`project-content ${this.getSelected(2)}`}> 
-					<YoutubeEmbed embedId={this.props.project.embedId} />
+					<YoutubeEmbed embedId={this.props.embedId} />
 				</div>
 				}
 				<div className={`project-content light flex-column ${this.getSelected(1)}`}>
-					<p>{this.props.project.description}</p>
-					<p>{this.props.project.keywords}</p>
+					<p>{this.props.description}</p>
+					<p>{this.props.keywords}</p>
 				</div>
                 <div className={`project-content light flex-column ${this.getSelected(0)}`}>
-                    <img src={this.props.project.image} alt={this.props.project.text}/>
+                    <img src={this.props.image} alt={this.props.text}/>
 				</div>
 			</div>
 		</div>;

@@ -117,9 +117,13 @@ const IndexPage = () => {
 			<h2>Projects</h2>
 			<div className="projects-container flex-row">
 				{projects.map(project => (
-					<Project key={project.text} project={project}/>
-				))
-				}
+					<Project key={project.text} 
+						text={project.text}	
+						embedId={project.embedId}
+						image={project.image}
+						description={project.description}
+						keywords={project.keywords}/>
+				))}
 			</div>
 			<div className="panel-separator"></div>
 		</div>
