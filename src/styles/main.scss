@@ -55,7 +55,7 @@ body {
 
 main div {
 	display: flex;
-	font-family: 'Slabo 27px';
+	font-family: "Glory", Helvetica, sans-serif;
 }
 
 h1 {
@@ -272,7 +272,7 @@ $colorBottom: #222ccc;
 			height: 300px;
 			display: block;
 			float: right;
-			margin: 10px 30px;
+			margin: 0px 30px;
 			border-radius: 10px;
 			box-shadow: 1px 2px 3px $color-primary-3;
 		}

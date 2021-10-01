@@ -16,15 +16,13 @@ const projects = [
     text: "Water Rendering",
     embedId: "vMgEDpx1GXg",
 	image: WaterRenderingPNG,
-    description: "Water Rendering aimed to explore rendering of realistically looking water in real time.\
-	The project is based on Jerry Tessendorf's paper Simulating Ocean Water (2001).",
+    description: "Water Rendering aimed to explore rendering of realistically looking water in real time. The project is based on Jerry Tessendorf's paper Simulating Ocean Water (2001).",
     keywords: "C++, OpenGL, CUDA, Fourier transforms",
   },
   {
     text: "Hide and Seek",
 	image: HideAndSeekPNG,
-    description: "A 3D game created as part of a university project in tcp-sockets programmig. The game allows multiple players to \
-	connect to a server to play a game of capture the flag in a procedurally generated maze.",
+    description: "A 3D game created as part of a university project in tcp-sockets programmig. The game allows multiple players to connect to a server to play a game of capture the flag in a procedurally generated maze.",
 		keywords: "C++, Network programming (sockets), OpenGL, Blender" 
   },
   {
@@ -40,9 +38,7 @@ const experiences = [
 	{
 		title: "B.S in Computer Science, KTH",
 		dateRange: "2017-2020",
-		description: "Three year B.S in Computer Science program including broad knowledge in the field of CS. Includes \
-		algorithms, data structures, logic, discrete maths, calculus, algebra and geometry, statistics, operating systems, \
-		computer systems architecture and more."
+		description: "Three year B.S in Computer Science program including broad knowledge in the field of CS. Includes algorithms, data structures, logic, discrete maths, calculus, algebra and geometry, statistics, operating systems, computer systems architecture and more."
 	},
 	{
 		title: "Digpro Technologies",
@@ -81,7 +77,7 @@ const IndexPage = () => {
 					<h3 className="dark">Computer scientist, rendering enthusiast and
 					 adventure seeker.</h3>
 				</div>
-				<span class="cover">
+				<span className="cover">
 					<img className="head-image" src={HeadImage} alt="Me"/>
 				</span>
 			</div>
