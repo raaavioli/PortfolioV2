@@ -37,7 +37,6 @@ $transparent: rgba(0, 0, 0, 0);
  $logo-size: 40px;
  $content-panel-width: 900px;
  $side-panel-width: 100px; 
- $side-panel-height: 360px;
  $project-width: 370px;
  $project-height: calc(#{$project-width} * (9 / 16));
  $inner-object-padding: 10px;
@@ -135,25 +134,42 @@ p {
 	path {
 		fill: $color-primary-0;
 	}
+	&.cross {
+		width: calc(#{$logo-size} / 1.5);
+		height: calc(#{$logo-size} / 1.5); 
+	}
 }
 
 .side-panel {
 	position: fixed;
 	width: $side-panel-width;
-	height: $side-panel-height;
-	top: 20px;
+	top: 0px;
 	left: 0px;
+	padding: 10px 0px 30px 0px;
 	align-items: center;
 	background: $color-primary-4;
-	box-shadow: 0px 0px 5px $color-primary-0;
+	border-radius: 0px 0px 10px 0px;
+	z-index: 300;
 
 	h3 {
-		margin: 30px 0px 10px 0px;
+		margin: 20px 0px 10px 0px;
 		color: $color-primary-0
+	}
+
+	button {
+		margin: 0px;
 	}
 
 	.svg-logo {
 		padding: 10px 0px;
+		&.menu-logo {
+			visibility: hidden;
+			display: none;
+		}
+
+		&.menu-logo, &.cross-logo {
+			cursor: pointer;
+		}
 	}
 
 	.panel-separator {
@@ -161,6 +177,17 @@ p {
 		width: 80%;
 		height: 2px;
 		margin-top: 10px;
+	}
+	&.hidden {
+		padding: 10px 0px 10px 0px;
+		.cross-logo, a, h3, .panel-separator{
+			visibility: hidden;
+			display: none;
+		}
+		.menu-logo {
+			visibility: visible;
+			display: inherit;
+		}
 	}
 }
 
@@ -181,6 +208,7 @@ $colorBottom: #222ccc;
 	width: 100%;
 
 	.head-panel {
+		z-index: 200;
 		position: relative;
 		justify-content: center;
 		align-items: center;
@@ -193,7 +221,7 @@ $colorBottom: #222ccc;
 			z-index: 1;
 			background-color: $transparent;
 			text-shadow: 1px 1px 2px $color-primary-4;
-			p {
+			h3 {
 				background-color: $transparent;
 			}
 		}
@@ -239,24 +267,19 @@ $colorBottom: #222ccc;
 			float: none;
 		}
 		.floating-img {
+			object-fit: cover;
+			width: 220px;
+			height: 300px;
+			display: block;
 			float: right;
-			margin: 10px;
+			margin: 10px 30px;
+			border-radius: 10px;
+			box-shadow: 1px 2px 3px $color-primary-3;
 		}
 	}
 
 	p { 
 		margin: 5px 0px;
-	}
-
-	.floating-img {
-		object-fit: cover;
-		width: 220px;
-		height: 300px;
-		display: block;
-		float: right;
-		margin: 0px 30px;
-		border-radius: 10px;
-		box-shadow: 1px 2px 3px $color-primary-3;
 	}
 
 	.projects-container {
@@ -406,11 +429,6 @@ $colorBottom: #222ccc;
 						line-height: 35px;
 					}
 				}
-	
-				.inner-project-box {
-					width: 270px;
-					height: calc(270px * (9 / 16));;
-				}
 			}
 		}
 
@@ -432,11 +450,7 @@ $colorBottom: #222ccc;
 	}
 }
 
-@media screen and (max-width: 915px) {
-	.side-panel {
-		visibility: hidden;	
-	}
-	
+@media screen and (max-width: 915px) {	
 	.content-panel {
 		width: 80%;
 		padding: 20px;
@@ -474,6 +488,9 @@ $colorBottom: #222ccc;
 			.head-text {
 				margin: 0px;
 			}
+			h3 {
+				font-size: 20px;
+			}
 		}
 	}
 
@@ -489,7 +506,7 @@ $colorBottom: #222ccc;
 					h1 {
 						margin: 25px 0px;
 					}
-					p {
+					h3 {
 						margin: 50px;
 						text-align: center;
 					}
@@ -516,7 +533,7 @@ $colorBottom: #222ccc;
 	
 				.inner-project-box {
 					width: 80vw;
-					height: calc(80vw * (9 / 16));;
+					height: calc(80vw * (9 / 16));
 				}
 			}
 		}
@@ -531,7 +548,36 @@ $colorBottom: #222ccc;
 	}
 }
 
+@media screen and (max-width: 580px) {
+	.side-panel {
+		&.hidden {
+			z-index: 50;
+		}
+	}
+	.content-panel {
+		/** About section **/
+		&:nth-of-type(2) {
+			.floating-img {
+				width: 40vw;
+				height: calc(40vw * (300 / 220));
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 450px) {
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 30px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	p {
+		font-size: 13px;
+	}
 	.content-panel {
 		/** About section **/
 		&:nth-of-type(2) {
@@ -548,6 +594,5 @@ $colorBottom: #222ccc;
 				height: 100vw;
 			}
 		}
-
 	}
 }

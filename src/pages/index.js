@@ -2,11 +2,11 @@ import * as React from "react";
 
 import "../styles/main.scss";
 
-import * as Logos from "../images/svgs.js";
 import FlyingFlamePNG from "../images/FlyingFlame.png"
 import HideAndSeekPNG from "../images/HideAndSeek.png"
 import WaterRenderingPNG from "../images/panorama.png"
 import Project from "./project.js";
+import SidePanel from "./side-panel.js"
 
 import HeadImage from "../images/hanging.jpg";
 import Portrait from "../images/portrait.jpg";
@@ -16,13 +16,15 @@ const projects = [
     text: "Water Rendering",
     embedId: "vMgEDpx1GXg",
 	image: WaterRenderingPNG,
-    description: "Water Rendering aimed to create a scene for rendering realistically looking water in real time based on Jerry Tessendorf's paper Simulating Ocean Water (2001).",
+    description: "Water Rendering aimed to explore rendering of realistically looking water in real time.\
+	The project is based on Jerry Tessendorf's paper Simulating Ocean Water (2001).",
     keywords: "C++, OpenGL, CUDA, Fourier transforms",
   },
   {
     text: "Hide and Seek",
 	image: HideAndSeekPNG,
-    description: "Hide and seek is a small 3D game created as part of a university project in tcp-sockets programmig. The game allows multiple players to connect to a server to play a game of capture the flag in a procedurally generated maze.",
+    description: "A 3D game created as part of a university project in tcp-sockets programmig. The game allows multiple players to \
+	connect to a server to play a game of capture the flag in a procedurally generated maze.",
 		keywords: "C++, Network programming (sockets), OpenGL, Blender" 
   },
   {
@@ -36,20 +38,23 @@ const projects = [
 
 const experiences = [
 	{
-		title: "B.A in Computer Science, KTH",
+		title: "B.S in Computer Science, KTH",
 		dateRange: "2017-2020",
+		description: "Three year B.S in Computer Science program including broad knowledge in the field of CS. Includes \
+		algorithms, data structures, logic, discrete maths, calculus, algebra and geometry, statistics, operating systems, \
+		computer systems architecture and more."
 	},
 	{
 		title: "Digpro Technologies",
 		dateRange: "2017-2020",
-		description: "Full stack Java EE development for GIS application with Swing, OracleSQL and PostgreSQL"
+		description: "Full stack Java EE development for geographic infrastructure application (GIS) with Swing, OracleSQL and PostgreSQL"
 	}
 ]
 
 const tools = [
 	{
 		title: "Languages",
-		types: "C++, Java, Python, Javascript, Rust, SQL",
+		types: "C++, C#, Java, Python, Javascript, Rust, SQL",
 	},
 	{
 		title: "Graphics APIs",
@@ -59,6 +64,10 @@ const tools = [
 		title: "Platform development (C++)",
 		types: "Linux, Win32",
 	},
+	{
+		title: "Software",
+		types: "Unity, Blender, Photoshop, Gimp"
+	}
 ]
 
 const IndexPage = () => {
@@ -69,8 +78,8 @@ const IndexPage = () => {
 			<div className="head-panel dark flex-row">
 				<div className="head-text flex-column dark">
 					<h1>Hi, I'm Oliver!</h1>
-					<p className="dark">Computer scientist, rendering enthusiast and
-					 adventure seeker.</p>
+					<h3 className="dark">Computer scientist, rendering enthusiast and
+					 adventure seeker.</h3>
 				</div>
 				<span class="cover">
 					<img className="head-image" src={HeadImage} alt="Me"/>
@@ -142,22 +151,7 @@ const IndexPage = () => {
 			<div className="panel-separator"></div>
 		</div>
 
-		<div className="side-panel flex-column">
-			<h3>Contact</h3>
-			<a href="https://www.linkedin.com/in/olivereriksson96/">
-				{Logos.LinkedInLogo()}
-			</a>
-			<a href="https://github.com/raaavioli/">
-				{Logos.GithubLogo ()}
-			</a>
-			<a href="https://www.facebook.com/oliver.eriksson.161/">
-				{Logos.FacebookLogo ()}
-			</a>
-			<a href="https://www.instagram.com/elolro/">
-				{Logos.InstagramLogo ()}
-			</a>
-			<div className="panel-separator"></div>
-		</div>
+		<SidePanel/>
     </main>
   )
 }
