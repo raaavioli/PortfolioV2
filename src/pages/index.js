@@ -99,7 +99,7 @@ const IndexPage = () => {
 						I have spent most of my credits in courses related to computer graphics, followed by parallelization and High Performance Computing (HPC).
 					</p>
 					<p>
-						My interest in computer graphics has been with me since I was young. I have always had an been weak for captivating graphical effects whether it be 
+						My interest in computer graphics has been with me since I was young. I have always been weak for captivating graphical effects whether it be 
 						particles, post processing effects or physically accurate simulations. As a kid I played quite a lot of video games, mainly on console, and I have
 						always been a great fan of platformers such as Jak and Daxter, Rachet and Clank, Uncharted, Halo and Sly Cooper.				
 					</p>
