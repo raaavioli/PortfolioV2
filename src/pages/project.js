@@ -69,7 +69,7 @@ class Project extends React.Component {
 				
 			<div className={`inner-project-box ${this.props.wide}`}>
 				{this.props.embedId && 
-				<div className={`project-content ${this.getSelected(2)}`}> 
+				<div className={`project-content ${this.getSelected(3)}`}> 
 					<YoutubeEmbed embedId={this.props.embedId} />
 				</div>
 				}
