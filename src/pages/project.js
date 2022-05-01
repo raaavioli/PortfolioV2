@@ -41,10 +41,17 @@ class Project extends React.Component {
 			<div className="flex-row">
 				<div className="tabs right light flex-row">
 					{this.props.embedId && 
-					<button className={`${this.getSelected(2)}`} 
-						onClick={() => this.setState({index: 2})} 
-						onKeyDown={() => this.setState({index: 2})}>
+					<button className={`${this.getSelected(3)}`} 
+						onClick={() => this.setState({index: 3})} 
+						onKeyDown={() => this.setState({index: 3})}>
 						{Logos.YoutubeLogo()}
+					</button>
+					}
+					{this.props.githubLink &&
+					<button className={`${this.getSelected(2)}`}>
+						<a href={this.props.githubLink}>
+							{Logos.GithubLogo()}
+						</a>
 					</button>
 					}
 					<button className={`${this.getSelected(1)}`} 
@@ -60,7 +67,7 @@ class Project extends React.Component {
 				</div>
 			</div>
 				
-			<div className="inner-project-box">
+			<div className={`inner-project-box ${this.props.wide}`}>
 				{this.props.embedId && 
 				<div className={`project-content ${this.getSelected(2)}`}> 
 					<YoutubeEmbed embedId={this.props.embedId} />

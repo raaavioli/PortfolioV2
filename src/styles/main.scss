@@ -359,10 +359,29 @@ $colorBottom: #222ccc;
 						color: $color-primary-4;
 						padding: 5px 10px;
 						z-index: 0;
-						&:last-of-type {
-							position: absolute;
-							bottom: 0px;
+						overflow-y: scroll;
+						&::-webkit-scrollbar {
+							width: 12px;               /* width of the entire scrollbar */
+						} 
+						&::-webkit-scrollbar-thumb {
+							background: $color-primary-3;
 						}
+						&::-webkit-scrollbar-track-piece {
+							background: $color-primary-1;
+						}
+						&:last-of-type {
+							position: relative;
+							bottom: 0px;
+							overflow-y: visible;
+						}
+					}
+				}
+
+				&.wide {
+					width: 100%;
+					height: $project-height;
+					img {
+						object-fit: fill;
 					}
 				}
 			}
@@ -531,7 +550,7 @@ $colorBottom: #222ccc;
 					}
 				}
 	
-				.inner-project-box {
+				.inner-project-box, .inner-project-box.wide {
 					width: 80vw;
 					height: calc(80vw * (9 / 16));
 				}

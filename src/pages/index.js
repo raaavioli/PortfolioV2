@@ -4,41 +4,95 @@ import "../styles/main.scss";
 
 import FlyingFlamePNG from "../images/FlyingFlame.png"
 import HideAndSeekPNG from "../images/HideAndSeek.png"
-import WaterRenderingPNG from "../images/panorama.png"
+import WaterRenderingPNG from "../images/waterrendering.png"
+import HobbyRenderingPNG from "../images/hobbyrenderingengine.png"
+import AttackProjectPNG from "../images/attack_project.png"
+import ConnectedProjectPNG from "../images/connected_project.png"
+import LabReworkPNG from "../images/labrework.png"
+import ThesisHeaderPNG from "../images/HeaderRibbonImage.png"
 import Project from "./project.js";
 import SidePanel from "./side-panel.js"
 
 import HeadImage from "../images/hanging.jpg";
 import Portrait from "../images/portrait.jpg";
 
-const projects = [
-  {
-    text: "Water Rendering",
-    embedId: "vMgEDpx1GXg",
-	image: WaterRenderingPNG,
-    description: "Water Rendering aimed to explore rendering of realistically looking water in real time. The project is based on Jerry Tessendorf's paper Simulating Ocean Water (2001).",
-    keywords: "C++, OpenGL, CUDA, Fourier transforms",
-  },
-  {
-    text: "Hide and Seek",
-	image: HideAndSeekPNG,
-    description: "A 3D game created as part of a university project in tcp-sockets programmig. The game allows multiple players to connect to a server to play a game of capture the flag in a procedurally generated maze.",
-		keywords: "C++, Network programming (sockets), OpenGL, Blender" 
-  },
-  {
-    text: "Flying Flame",
-	image: FlyingFlamePNG,
-	description: "A 2D survival helicopter game where your mission is to drop bombs on enemy blobs before they create too many dangerous turrets and shoot you down with homing missiles.",
-    keywords: "Java, 2D sprite animations, Gimp",
-  }
+
+const academia_projects = [
+	{
+		text: "Smooth Particle Ribbons Through Hardware Accelerated Tessellation (Master Thesis)",
+		image: ThesisHeaderPNG,
+		description: "Master thesis on generating smooth tessellated particle ribbons using traditional tessellation shaders and mesh shaders in DirectX 12. Methodology involved evaluating B-splines curves on a tessellated surface for three different hardware implementations using mesh shaders, mesh + task shaders and tessellation shaders. Culling, LOD and Gouraud shading were three suggested optimizations, which showed to be useful to keep interactive frame rates. Results show that mesh+task shaders can be used to generate and render smooth particle ribbons of arbitrary levels of tessellation, however they remain slower than traditional tessellation shaders for tessellation factors smaller than 64.",
+		keywords: "Tessellation, Mesh shaders, B-splines, Particle ribbons, VFX",
+		wide: "wide",
+	},
+	{
+		text: "Water Rendering",
+		embedId: "vMgEDpx1GXg",
+		image: WaterRenderingPNG,
+		description: "Water Rendering aimed to explore rendering of realistically looking water in real time. The project is based on Jerry Tessendorf's paper Simulating Ocean Water (2001).",
+		keywords: "C++, OpenGL, CUDA, Fourier transforms",
+		githubLink: "https://github.com/raaavioli/WaterRendering",
+	},
+	{
+		text: "Course Assignment Rework",
+		image: LabReworkPNG,
+		description: "Reworked lab material the course DH2323: Computer graphics and interation at KTH. I took initiative to improve the labs for three reasons: To make a cross-platform easily built code skeleton. To improve the instructions and introduce questions related to the implementation. To make a unified application which could be used to implement and present all labs.",
+		keywords: "Linear algebra, Ray tracing, Rasterization, C++, OpenGL",
+		githubLink: "https://github.com/raaavioli/Rendering-fundamentals",
+	},
+]
+
+const group_projects = [
+	{
+		text: "ATTACK",
+		image: AttackProjectPNG,
+		description: "Group project making an interactive card game played on a SUR40 touch monitor. I contributed to all parts of the project, however most of my work was graphics related as I wrote shaders for most visual effects in the game such as projectiles, UI and characters. I also mixed and added sound to the game.",
+		keywords: "Unity, HLSL, OpenCV, SUR40 Touch monitor",
+		githubLink: "https://github.com/raaavioli/ATTACK-AGI",
+	},
+	{
+		text: "Connected",
+		image: ConnectedProjectPNG,
+		description: "Short project making an interactive VR environment for building electrical circuitry. My main contribution was related to creating interactive components, where I made a glowing lightbulb, a sound-playing radio and a container for recycling. I also programmed HLSL shaders and set up SteamVR to be able to interact with the sound-playing radio component I introduced.",
+		keywords: "Unity, HLSL, SteamVR, Blender",
+		githubLink: "https://github.com/raaavioli/Connected",
+	},
+]
+
+const hobby_projects = [
+	{
+		text: "Outdoor Environment Rendering",
+		image: HobbyRenderingPNG,
+		description: "A hobby renderer written in OpenGL. Work has also been started to port the renderer to Metal. The renderer contains systems for simulation and rendering of millions of individual grass blades, hot-reloading and dynamic caching of glsl shaders, shadow mapping, fbx support and more.",
+		keywords: "C++, OpenGL, Compute shaders, Particle systems",
+		githubLink: "https://github.com/raaavioli/OutdoorEnvironmentRendering",
+	},
+	{
+		text: "Hide and Seek",
+		image: HideAndSeekPNG,
+		description: "A 3D game created as part of a university project in tcp-sockets programmig. The game allows multiple players to connect to a server to play a game of capture the flag in a procedurally generated maze.",
+		keywords: "C++, Network programming (sockets), OpenGL, Blender",
+		githubLink: "https://github.com/raaavioli/HideAndSeekGame",
+	},
+	{
+		text: "Flying Flame",
+		image: FlyingFlamePNG,
+		description: "A 2D survival helicopter game where your mission is to drop bombs on enemy blobs before they create too many dangerous turrets and shoot you down with homing missiles.",
+		keywords: "Java, 2D sprite animations, Gimp",
+	}
 ]
 
 
 const experiences = [
 	{
-		title: "B.S in Computer Science, KTH",
+		title: "M.Sc in Computer Science, KTH",
+		dateRange: "2020-2022",
+		description: "Two year M.Sc in Computer Science. Main track in computer graphics and visualization. Sidetrack in high performance computing and computer systems architecture with focus on parallelism for GPUs and distributed systems. Thesis was conducted together with Avalanche Studios Group."
+	},
+	{
+		title: "B.Sc in Computer Science, KTH",
 		dateRange: "2017-2020",
-		description: "Three year B.S in Computer Science program including broad knowledge in the field of CS. Includes algorithms, data structures, logic, discrete maths, calculus, algebra and geometry, statistics, operating systems, computer systems architecture and more."
+		description: "Three year B.Sc in Computer Science program including broad knowledge in the field of CS. Includes algorithms, data structures, logic, discrete maths, calculus, algebra and geometry, statistics, operating systems, computer systems architecture and more."
 	},
 	{
 		title: "Digpro Technologies",
@@ -54,15 +108,15 @@ const tools = [
 	},
 	{
 		title: "Graphics APIs",
-		types: "OpenGL, Direct3D 12"
+		types: "OpenGL, Direct3D 12, Metal"
 	},
 	{
 		title: "Platform development (C++)",
-		types: "Linux, Win32",
+		types: "Linux, Win32, Mac OSX"
 	},
 	{
 		title: "Software",
-		types: "Unity, Blender, Photoshop, Gimp"
+		types: "PIX, RenderDoc, Nvidia Nsight, Unity, Blender, Photoshop, Gimp"
 	}
 ]
 
@@ -110,17 +164,47 @@ const IndexPage = () => {
 		</div>
 
 		<div className="content-panel flex-column">
-			<h2>Projects</h2>
-			<div className="projects-container flex-row">
-				{projects.map(project => (
-					<Project key={project.text} 
-						text={project.text}	
-						embedId={project.embedId}
-						image={project.image}
-						description={project.description}
-						keywords={project.keywords}/>
-				))}
-			</div>
+			<h2>Academia</h2>
+				<div className="projects-container flex-row">
+					{academia_projects.map(project => (
+						<Project key={project.text} 
+							text={project.text}	
+							embedId={project.embedId}
+							image={project.image}
+							description={project.description}
+							keywords={project.keywords}
+							githubLink={project.githubLink}
+							wide={project.wide}/>
+					))}
+				</div>
+
+			<h2>Group work</h2>
+				<div className="projects-container flex-row">
+					{group_projects.map(project => (
+						<Project key={project.text} 
+							text={project.text}	
+							embedId={project.embedId}
+							image={project.image}
+							description={project.description}
+							keywords={project.keywords}
+							githubLink={project.githubLink}
+							wide={project.wide}/>
+					))}
+				</div>	
+			<h2>Hobby</h2>
+				<div className="projects-container flex-row">
+					{hobby_projects.map(project => (
+						<Project key={project.text} 
+							text={project.text}	
+							embedId={project.embedId}
+							image={project.image}
+							description={project.description}
+							keywords={project.keywords}
+							githubLink={project.githubLink}
+							wide={project.wide}/>
+					))}
+				</div>
+
 			<div className="panel-separator"></div>
 		</div>
 		<div className="content-panel flex-column">
